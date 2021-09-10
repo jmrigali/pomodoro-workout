@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-pomodoroworkout-dev-182007-authRole",
+      "UnauthRoleArn": "arn:aws:iam::018349789769:role/amplify-pomodoroworkout-dev-182007-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::018349789769:role/amplify-pomodoroworkout-dev-182007-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-pomodoroworkout-dev-182007-deployment",
+      "UnauthRoleName": "amplify-pomodoroworkout-dev-182007-unauthRole",
+      "StackName": "amplify-pomodoroworkout-dev-182007",
+      "StackId": "arn:aws:cloudformation:us-west-2:018349789769:stack/amplify-pomodoroworkout-dev-182007/dc14bd30-11cc-11ec-a13e-0226a28ee521",
+      "AmplifyAppId": "d663rxecchax0"
+    },
+    "categories": {
+      "auth": {
+        "pomodoroworkoute108f2e4": {}
+      },
+      "function": {
+        "pomodoroworkout02100a05": {
+          "deploymentBucketName": "amplify-pomodoroworkout-dev-182007-deployment",
+          "s3Key": "amplify-builds/pomodoroworkout02100a05-44716136707075663161-build.zip"
+        }
+      }
+    }
+  }
+}

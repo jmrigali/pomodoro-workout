@@ -13,6 +13,7 @@
       }
     },
     mounted() {
+      console.log('in mounted for about')
       if (this.$store.state.user) {
         const jwt = this.$store.state.user.getSignInUserSession().getIdToken().getJwtToken()
         const config = {
@@ -21,7 +22,7 @@
           }
         }
         axios
-          .get('https://r29pm52lfc.execute-api.us-west-2.amazonaws.com/v1/m', config)
+          .get('https://1lk2sy3981.execute-api.us-west-2.amazonaws.com/v1/woorkouts', config)
           .then((val) => (this.info = val))
           .catch((err) => console.log(err))
       }

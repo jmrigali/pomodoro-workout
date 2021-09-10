@@ -34,6 +34,7 @@ router.beforeResolve((to, from, next) => {
     let user
     Vue.prototype.$Amplify.Auth.currentAuthenticatedUser()
       .then((data) => {
+        console.log('Data in route resolver', data)
         if (data && data.signInUserSession) {
           user = data
           next()
