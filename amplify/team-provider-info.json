@@ -18,7 +18,7 @@
       "function": {
         "pomodoroworkout02100a05": {
           "deploymentBucketName": "amplify-pomodoroworkout-dev-182007-deployment",
-          "s3Key": "amplify-builds/pomodoroworkout02100a05-6255766e3244365a7842-build.zip"
+          "s3Key": "amplify-builds/pomodoroworkout02100a05-486361437646784b596f-build.zip"
         }
       }
     }

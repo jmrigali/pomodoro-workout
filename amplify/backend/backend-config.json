@@ -27,7 +27,8 @@
     "pomodoroworkout02100a05": {
       "build": true,
       "providerPlugin": "awscloudformation",
-      "service": "Lambda"
+      "service": "Lambda",
+      "dependsOn": []
     }
   }
 }

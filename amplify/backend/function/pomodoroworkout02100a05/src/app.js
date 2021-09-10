@@ -9,7 +9,6 @@ See the License for the specific language governing permissions and limitations 
 var express = require('express')
 var bodyParser = require('body-parser')
 var awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
-var helpers = require('./helpers/index')
 
 // declare a new express app
 var app = express()
@@ -19,7 +18,12 @@ app.use(awsServerlessExpressMiddleware.eventContext())
 // Enable CORS for all methods
 app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*')
-  res.header('Access-Control-Allow-Headers', '*')
+  // res.header('Access-Control-Allow-Headers', '*')
+  res.headers(
+    'Access-Control-Allow-Headers',
+    "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+  )
+  res.headers('Access-Control-Allow-Methods', "'DELETE,GET,HEAD,OPTIONS,PATCH,POST,PUT'")
   next()
 })
 
@@ -27,13 +31,12 @@ app.use(function (req, res, next) {
  * Example get method *
  **********************/
 
-app.get('/workouts', function (req, res) {
+app.get('/workout', function (req, res) {
   // Add your code here
-
-  res.json({ success: 'get call succeed!', url: req.url, body: helpers.makeRoutine() })
+  res.json({ success: 'get call succeed!', url: req.url })
 })
 
-app.get('/workouts/*', function (req, res) {
+app.get('/workout/*', function (req, res) {
   // Add your code here
   res.json({ success: 'get call succeed!', url: req.url })
 })
@@ -42,12 +45,12 @@ app.get('/workouts/*', function (req, res) {
  * Example post method *
  ****************************/
 
-app.post('/workouts', function (req, res) {
+app.post('/workout', function (req, res) {
   // Add your code here
   res.json({ success: 'post call succeed!', url: req.url, body: req.body })
 })
 
-app.post('/workouts/*', function (req, res) {
+app.post('/workout/*', function (req, res) {
   // Add your code here
   res.json({ success: 'post call succeed!', url: req.url, body: req.body })
 })
@@ -56,12 +59,12 @@ app.post('/workouts/*', function (req, res) {
  * Example put method *
  ****************************/
 
-app.put('/workouts', function (req, res) {
+app.put('/workout', function (req, res) {
   // Add your code here
   res.json({ success: 'put call succeed!', url: req.url, body: req.body })
 })
 
-app.put('/workouts/*', function (req, res) {
+app.put('/workout/*', function (req, res) {
   // Add your code here
   res.json({ success: 'put call succeed!', url: req.url, body: req.body })
 })
@@ -70,12 +73,12 @@ app.put('/workouts/*', function (req, res) {
  * Example delete method *
  ****************************/
 
-app.delete('/workouts', function (req, res) {
+app.delete('/workout', function (req, res) {
   // Add your code here
   res.json({ success: 'delete call succeed!', url: req.url })
 })
 
-app.delete('/workouts/*', function (req, res) {
+app.delete('/workout/*', function (req, res) {
   // Add your code here
   res.json({ success: 'delete call succeed!', url: req.url })
 })
