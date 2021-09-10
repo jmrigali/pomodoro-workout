@@ -22,7 +22,7 @@
           }
         }
         axios
-          .get('https://1lk2sy3981.execute-api.us-west-2.amazonaws.com/v1/woorkouts', config)
+          .get('https://1lk2sy3981.execute-api.us-west-2.amazonaws.com/v1/workouts', config)
           .then((val) => (this.info = val))
           .catch((err) => console.log(err))
       }

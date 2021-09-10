@@ -30,7 +30,7 @@ app.use(function (req, res, next) {
 app.get('/workouts', function (req, res) {
   // Add your code here
 
-  res.json({ success: 'get call succeed!', url: req.url, workout: helpers.makeRoutine() })
+  res.json({ success: 'get call succeed!', url: req.url, body: helpers.makeRoutine() })
 })
 
 app.get('/workouts/*', function (req, res) {
