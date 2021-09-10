@@ -9,6 +9,7 @@ See the License for the specific language governing permissions and limitations 
 var express = require('express')
 var bodyParser = require('body-parser')
 var awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
+var helpers = require('./helpers/index')
 
 // declare a new express app
 var app = express()
@@ -26,12 +27,13 @@ app.use(function (req, res, next) {
  * Example get method *
  **********************/
 
-app.get('/woorkouts', function (req, res) {
+app.get('/workouts', function (req, res) {
   // Add your code here
-  res.json({ success: 'get call succeed!', url: req.url })
+
+  res.json({ success: 'get call succeed!', url: req.url, workout: helpers.makeRoutine() })
 })
 
-app.get('/woorkouts/*', function (req, res) {
+app.get('/workouts/*', function (req, res) {
   // Add your code here
   res.json({ success: 'get call succeed!', url: req.url })
 })
@@ -40,12 +42,12 @@ app.get('/woorkouts/*', function (req, res) {
  * Example post method *
  ****************************/
 
-app.post('/woorkouts', function (req, res) {
+app.post('/workouts', function (req, res) {
   // Add your code here
   res.json({ success: 'post call succeed!', url: req.url, body: req.body })
 })
 
-app.post('/woorkouts/*', function (req, res) {
+app.post('/workouts/*', function (req, res) {
   // Add your code here
   res.json({ success: 'post call succeed!', url: req.url, body: req.body })
 })
@@ -54,12 +56,12 @@ app.post('/woorkouts/*', function (req, res) {
  * Example put method *
  ****************************/
 
-app.put('/woorkouts', function (req, res) {
+app.put('/workouts', function (req, res) {
   // Add your code here
   res.json({ success: 'put call succeed!', url: req.url, body: req.body })
 })
 
-app.put('/woorkouts/*', function (req, res) {
+app.put('/workouts/*', function (req, res) {
   // Add your code here
   res.json({ success: 'put call succeed!', url: req.url, body: req.body })
 })
@@ -68,12 +70,12 @@ app.put('/woorkouts/*', function (req, res) {
  * Example delete method *
  ****************************/
 
-app.delete('/woorkouts', function (req, res) {
+app.delete('/workouts', function (req, res) {
   // Add your code here
   res.json({ success: 'delete call succeed!', url: req.url })
 })
 
-app.delete('/woorkouts/*', function (req, res) {
+app.delete('/workouts/*', function (req, res) {
   // Add your code here
   res.json({ success: 'delete call succeed!', url: req.url })
 })
